@@ -12,9 +12,7 @@ public class DataManagement {
     
     // a method for reading data from JSON to POJO
     public EmployeeList readAllData(){
-        
         EmployeeList empList = new EmployeeList();
-        
         try {
             // readerFor is to specify what class are we expecting
             empList = new ObjectMapper().readerFor(EmployeeList.class).readValue(new File("target/Employees.json"));
@@ -34,8 +32,8 @@ public class DataManagement {
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("target/Employees.json"), e);
     }
     
+    // a method that move json objects to s txt file
     public static boolean toTxtEmployee(){
-        
         try{
             // creating object of ObjectMapper class
             ObjectMapper objectMapper = new ObjectMapper();
